@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://www3.epa.gov/carbon-footprint-calculator/",
+  "requestTimeout": 20000,
+  "browser": "chromium",
+  "chromeWebSecurity": false,
+  "viewportWidth": 1024,
+  "viewportHeight": 900
+}

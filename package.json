@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.5.0",
+    "cypress": "^8.6.0"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run"
+  }
+}

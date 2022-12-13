@@ -1,0 +1,5 @@
+**/cypress/screenshots
+**/cypress/logs
+**/cypress/videos
+**/node_modules
+**/allure-results
