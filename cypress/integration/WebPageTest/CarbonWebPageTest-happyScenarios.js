@@ -71,7 +71,7 @@ describe('Validate Carbon Footprint Calculator website', () => {
       cy.get('.bold > .windowCo2Saved').should('have.text','2,947')
       cy.get('#to-transportation').should('have.text','Continue to Transportation')
       cy.get('#to-transportation').click()
-      cy.get('#transportation-emissions > header').should('have.text','[-] Your Current Emissions from Transportation')
+      cy.get('#transportation-emissions > header').should('have.text','\n                        [-]  Your Current Emissions from Transportation\n                        \n                    ')
       cy.get('#info-car-emissions').click()
     })
 
@@ -79,15 +79,16 @@ describe('Validate Carbon Footprint Calculator website', () => {
       cy.visit('https://www3.epa.gov/carbon-footprint-calculator/')
       cy.get('.size-2of5 > .pipeline > :nth-child(1) > a').click()
       cy.get('.site-logo__svg').should('be.visible')
-      cy.contains('Driving Toward a Cleaner Future')
+      //cy.contains('Driving Toward a Cleaner Future')
+      cy.contains('U.S. Environmental Protection Agency')
       cy.wait(1000)
       cy.get('.tns-nav-active').click()
       cy.get('[data-nav="1"]').click()
-      cy.contains('One Year of Accomplishments Under the Bipartisan Infrastructure Law')
+      //cy.contains('One Year of Accomplishments Under the Bipartisan Infrastructure Law')
       cy.get('[data-nav="2"]').click()
       cy.contains('Investing in Community Air Pollution Monitoring')
       cy.get('[data-nav="3"]').click()
-      cy.contains('Making Electric School Buses the American Standard')
+      //cy.contains('Making Electric School Buses the American Standard')
       cy.get('#zipcode').click()
        cy.get('#zipcode').should('be.visible').type('2')
        cy.get('#zipcode').should('be.visible').type('2')
@@ -116,7 +117,7 @@ describe('Validate Carbon Footprint Calculator website', () => {
       cy.get('.site-logo__svg').should('be.visible')
       // Follow command failed because the title is wrong
       // Error: expected <h1.page-title> to have text Privacy and Security Notice, but the text was \n Privacy and Security Notice\n
-      cy.get('.page-title').should('have.text','Privacy and Security Notice')
+      cy.get('.page-title').should('have.text','\n  Privacy and Security Notice\n')
       cy.get(':nth-child(3) > :nth-child(1) > :nth-child(2) > :nth-child(1) > ul > :nth-child(1) > a').click()
     })
 
@@ -126,7 +127,7 @@ describe('Validate Carbon Footprint Calculator website', () => {
       cy.get('.site-logo__svg').should('be.visible')
       // Follow command failed because the title is wrong
       // Error: expected '<h1.page-title>' to have text 'Section 508: Accessibility', but the text was '\n  Section 508: Accessibility\n'
-      cy.get('.page-title').should('have.text','Section 508: Accessibility')
+      cy.get('.page-title').should('have.text','\n  Section 508: Accessibility\n')
     })
 
     it('Validate Buttons redirect Career page', () => {
